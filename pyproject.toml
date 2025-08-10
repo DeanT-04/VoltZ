@@ -2,8 +2,11 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.targets.wheel]
+packages = ["backend/src"]
+
 [project]
-name = "voltforge"
+name = "VoltZ"
 version = "0.1.0"
 description = "Lightweight tool that transforms user prompts into validated, downloadable KiCad schematic projects"
 readme = "README.md"
@@ -22,37 +25,20 @@ classifiers = [
 requires-python = ">=3.11"
 dependencies = [
     # Core web framework
-    "fastapi==0.104.1",
-    "uvicorn[standard]==0.24.0",
+    "fastapi>=0.104.1",
+    "uvicorn[standard]>=0.24.0",
     
     # Data validation and serialization
-    "pydantic==2.5.0",
-    
-    # Schematic generation
-    "skidl==1.2.2",
-    
-    # Vector database and embeddings
-    "chromadb==0.4.18",
-    "sentence-transformers==2.2.2",
-    
-    # Circuit simulation
-    "ngspice-python==0.1.2",
-    
-    # PDF processing for datasheets
-    "pdfminer.six==20221105",
+    "pydantic>=2.5.0",
     
     # HTTP client for external APIs
-    "httpx==0.25.2",
-    
-    # Task queue
-    "rq==1.15.1",
-    "redis==5.0.1",
+    "httpx>=0.25.2",
     
     # Security and CORS
-    "python-multipart==0.0.6",
+    "python-multipart>=0.0.6",
     
     # Environment configuration
-    "python-dotenv==1.0.0",
+    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]

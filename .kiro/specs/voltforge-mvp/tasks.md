@@ -12,14 +12,23 @@
   - Configure CI/CD pipeline with GitHub Actions for linting, testing, and MCP validation
   - _Requirements: 3.1, 3.4, 5.1, 5.4_
 
-- [ ] 2. Implement core data models and validation
+- [x] 2. Implement core data models and validation
+
+
+
+
 
   - Create Pydantic models for ParsedPrompt, Component, SchematicResult, and Project
   - Implement validation functions for electrical specifications and pin mappings
   - Write unit tests for data model validation and serialization
   - _Requirements: 4.1, 4.4, 6.1_
+-
 
-- [ ] 3. Build FastAPI application foundation
+- [x] 3. Build FastAPI application foundation
+
+
+
+
 
   - Create FastAPI app with structured routing and middleware
   - Implement API endpoint stubs for all 5 core endpoints
@@ -29,6 +38,7 @@
   - _Requirements: 1.2, 5.5, 6.1, 6.4_
 
 - [ ] 4. Implement Planner service for prompt parsing
+
   - Create PlannerService class with regex-based role extraction (microcontroller, sensor, power)
   - Implement constraint parsing for voltage, size, and battery requirements
   - Add deterministic classification logic without LLM dependencies
@@ -36,6 +46,7 @@
   - _Requirements: 1.1, 3.2, 4.4_
 
 - [ ] 5. Set up vector database and embedding system
+
   - Configure Chroma or FAISS for local vector storage
   - Implement embedding generation using sentence-transformers/all-MiniLM-L6-v2
   - Create datasheet ingestion pipeline with pdfminer.six for text extraction
