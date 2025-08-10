@@ -1,0 +1,145 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "voltforge"
+version = "0.1.0"
+description = "Lightweight tool that transforms user prompts into validated, downloadable KiCad schematic projects"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "VoltForge Contributors"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.11"
+dependencies = [
+    # Core web framework
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    
+    # Data validation and serialization
+    "pydantic==2.5.0",
+    
+    # Schematic generation
+    "skidl==1.2.2",
+    
+    # Vector database and embeddings
+    "chromadb==0.4.18",
+    "sentence-transformers==2.2.2",
+    
+    # Circuit simulation
+    "ngspice-python==0.1.2",
+    
+    # PDF processing for datasheets
+    "pdfminer.six==20221105",
+    
+    # HTTP client for external APIs
+    "httpx==0.25.2",
+    
+    # Task queue
+    "rq==1.15.1",
+    "redis==5.0.1",
+    
+    # Security and CORS
+    "python-multipart==0.0.6",
+    
+    # Environment configuration
+    "python-dotenv==1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Testing
+    "pytest==7.4.3",
+    "pytest-asyncio==0.21.1",
+    "pytest-cov==4.1.0",
+    "playwright==1.40.0",
+    
+    # Linting and formatting
+    "ruff==0.1.6",
+    "black==23.11.0",
+    "mypy==1.7.1",
+    
+    # Development server
+    "watchfiles==0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/voltforge/voltforge"
+Repository = "https://github.com/voltforge/voltforge"
+Issues = "https://github.com/voltforge/voltforge/issues"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.black]
+target-version = ['py311']
+line-length = 88
+
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers --cov=backend --cov-report=term-missing"
+testpaths = [
+    "backend/tests",
+]
+python_files = [
+    "test_*.py",
+    "*_test.py",
+]
+
+[tool.coverage.run]
+source = ["backend"]
+omit = [
+    "backend/tests/*",
+    "backend/*/migrations/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
