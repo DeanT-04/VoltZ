@@ -269,10 +269,18 @@ Security is a priority:
 
 ## 📚 Documentation
 
-- **API Reference**: Available at `/docs` endpoint
-- **Architecture Guide**: [docs/architecture.md](docs/architecture.md)
-- **Component Library**: [docs/components.md](docs/components.md)
-- **Deployment Guide**: [docs/deployment.md](docs/deployment.md)
+### Core Documentation
+- **[🏗️ Architecture Guide](./docs/architecture.md)** - System design, components, and technical decisions
+- **[📖 API Reference](./docs/api.md)** - Complete API documentation with examples
+- **[💻 Development Guide](./docs/development.md)** - Setup, workflow, and development guidelines
+- **[🚀 Deployment Guide](./docs/deployment.md)** - Production deployment instructions
+- **[🧪 Testing Guide](./docs/testing.md)** - Testing strategy, guidelines, and best practices
+- **[🤝 Contributing Guide](./docs/contributing.md)** - How to contribute to the project
+
+### Additional Resources
+- **[📋 Changelog](./CHANGELOG.md)** - Version history and changes
+- **[👥 Contributors](./CONTRIBUTORS.md)** - Project contributors and acknowledgments
+- **API Reference**: Interactive docs available at `/docs` endpoint
 
 ## 🐛 Troubleshooting
 

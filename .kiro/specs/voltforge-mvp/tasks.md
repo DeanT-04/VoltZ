@@ -37,7 +37,16 @@
   - Write API contract tests to validate JSON schemas
   - _Requirements: 1.2, 5.5, 6.1, 6.4_
 
-- [ ] 4. Implement Planner service for prompt parsing
+- [x] 4. Implement Planner service for prompt parsing
+
+
+
+
+
+
+
+
+
 
   - Create PlannerService class with regex-based role extraction (microcontroller, sensor, power)
   - Implement constraint parsing for voltage, size, and battery requirements
@@ -45,7 +54,13 @@
   - Write unit tests for 12 example prompts with 90% extraction accuracy target
   - _Requirements: 1.1, 3.2, 4.4_
 
-- [ ] 5. Set up vector database and embedding system
+- [x] 5. Set up vector database and embedding system
+
+
+
+
+
+
 
   - Configure Chroma or FAISS for local vector storage
   - Implement embedding generation using sentence-transformers/all-MiniLM-L6-v2
@@ -53,16 +68,23 @@
   - Implement text chunking (1k-2k chars) with provenance tracking
   - Write integration tests for vector search with ≤150ms latency requirement
   - _Requirements: 3.3, 7.1, 7.4, 7.5_
+-
 
 - [ ] 6. Build Researcher service for component discovery
+
+
+
   - Implement ResearcherService with local vector database querying
   - Add fallback logic for external API integration (Digikey/Octopart)
   - Create component caching system with TTL configuration
   - Implement "no candidate found" handling instead of hallucination
   - Write integration tests for component search with mock external APIs
   - _Requirements: 7.1, 7.2, 7.3, 3.4_
+- [ ] 7. Create SKiDL coder service for schematic generation
+
 
 - [ ] 7. Create SKiDL coder service for schematic generation
+
   - Implement SKiDLCoderService with template-based component mapping
   - Create component templates for common parts (ESP32, sensors, power management)
   - Add SKiDL netlist generation with explicit VCC/GND net handling

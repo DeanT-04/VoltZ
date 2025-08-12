@@ -6,23 +6,28 @@ build-backend = "hatchling.build"
 packages = ["backend/src"]
 
 [project]
-name = "VoltZ"
-version = "0.1.0"
-description = "Lightweight tool that transforms user prompts into validated, downloadable KiCad schematic projects"
+name = "voltforge"
+version = "1.0.0-beta"
+description = "AI-powered electronic component search and project planning platform"
 readme = "README.md"
 license = {file = "LICENSE"}
 authors = [
-    {name = "VoltForge Contributors"}
+    {name = "VoltForge Team", email = "team@voltforge.dev"}
 ]
+keywords = ["electronics", "components", "ai", "search", "planning", "vector-database", "embeddings"]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Database :: Database Engines/Servers",
+    "Framework :: FastAPI",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dependencies = [
     # Core web framework
     "fastapi>=0.104.1",
@@ -39,6 +44,13 @@ dependencies = [
     
     # Environment configuration
     "python-dotenv>=1.0.0",
+    
+    # Vector database and embeddings
+    "chromadb>=0.4.18",
+    "sentence-transformers>=2.2.2",
+    
+    # PDF processing for datasheet ingestion
+    "pdfminer.six>=20221105",
 ]
 
 [project.optional-dependencies]
